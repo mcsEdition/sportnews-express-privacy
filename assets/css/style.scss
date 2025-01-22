@@ -1,0 +1,84 @@
+/* assets/css/style.scss */
+---
+---
+
+$primary-color: #2D3250;
+$secondary-color: #F6B17A;
+$text-color: #333;
+$light-gray: #f8f9fa;
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: $text-color;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.site-header {
+    background-color: $primary-color;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.site-title {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.site-nav {
+    float: right;
+    
+    .nav-link {
+        color: white;
+        text-decoration: none;
+        margin-left: 1rem;
+        
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+}
+
+.page-content {
+    h1, h2 {
+        color: $primary-color;
+    }
+    
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+        margin: 2rem 0 1rem;
+    }
+}
+
+.site-footer {
+    margin-top: 3rem;
+    padding: 2rem 0;
+    background-color: $light-gray;
+    text-align: center;
+    
+    a {
+        color: $primary-color;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .site-nav {
+        float: none;
+        margin-top: 1rem;
+        text-align: center;
+    }
+}
