@@ -1,0 +1,99 @@
+# Configuration du site
+title: SportNews Express - Privacy Policy
+email: privacy@sportnews-express.com
+description: >-
+  Privacy Policy and Terms of Service for SportNews Express, 
+  your real-time sports news application available on Google Play Store.
+baseurl: "" # le sous-chemin de votre site, par exemple "/blog"
+url: "https://privacy.sportnews-express.com" # l'URL de base de votre site
+logo: /assets/images/logo.png
+
+# Configuration des réseaux sociaux
+social:
+  name: SportNews Express
+  links:
+    - https://play.google.com/store/apps/details?id=com.sportnews.express
+    - https://twitter.com/sportnewsexpress
+    - https://facebook.com/sportnewsexpress
+
+# Configuration des langues
+languages: ["en", "fr"]
+default_lang: "en"
+exclude_from_localization: ["assets", "images"]
+parallel_localization: true
+
+# Configuration du thème et des plugins
+theme: minima
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Configuration de la construction
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  auto_ids: true
+
+# Configuration des collections
+collections:
+  policies:
+    output: true
+    permalink: /:collection/:name/
+
+# Configuration des permaliens
+permalink: pretty
+
+# Configuration de la mise en page par défaut
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "privacy-policy-en"
+    values:
+      lang: "en"
+  -
+    scope:
+      path: "privacy-policy-fr"
+    values:
+      lang: "fr"
+
+# Exclusions de la construction
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - gemfiles
+  - README.md
+  - LICENSE
+  - CNAME
+
+# Configuration du serveur local
+livereload: true
+port: 4000
+host: 0.0.0.0
+
+# Configuration SEO supplémentaire
+twitter:
+  username: sportnewsexpress
+  card: summary_large_image
+
+
+
+# Configuration de compression
+sass:
+  style: compressed
+  sourcemap: never
+
+# Configuration de la sécurité
+strict_front_matter: true
+safe: true
