@@ -91,8 +91,8 @@ twitter:
 
 # Configuration de compression
 sass:
-  style: compressed
-  sourcemap: never
+    sass_dir: _sass
+    style: compressed
 
 # Configuration de la sécurité
 strict_front_matter: true
