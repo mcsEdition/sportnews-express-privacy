@@ -4,9 +4,9 @@ email: privacy@sportnews-express.com
 description: >-
   Privacy Policy and Terms of Service for SportNews Express, 
   your real-time sports news application available on Google Play Store.
-baseurl: "" # le sous-chemin de votre site, par exemple "/blog"
-url: "https://privacy.sportnews-express.com" # l'URL de base de votre site
-logo: /assets/images/logo.png
+baseurl: "/sportnews-express-privacy"
+url: "https://mcsedition.github.io" # l'URL de base de votre site
+
 
 # Configuration des réseaux sociaux
 social:
