@@ -1,7 +1,7 @@
 # index.md
 ---
 layout: default
-title: SportNews Express Privacy Policy
+title: Home
 ---
 
 # Welcome to SportNews Express Privacy Policy
