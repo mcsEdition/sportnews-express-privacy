@@ -1,6 +1,7 @@
-/* assets/css/style.scss */
 ---
 ---
+
+@import "minima";
 
 $primary-color: #2D3250;
 $secondary-color: #F6B17A;
@@ -15,70 +16,100 @@ body {
     padding: 0;
 }
 
-.wrapper {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
 }
 
 .site-header {
     background-color: $primary-color;
     padding: 1rem 0;
-    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.site-title {
+.site-logo {
     color: white;
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: bold;
+    
+    &:hover {
+        color: $secondary-color;
+    }
 }
 
-.site-nav {
-    float: right;
+.nav-links {
+    display: flex;
+    gap: 1rem;
     
     .nav-link {
         color: white;
         text-decoration: none;
-        margin-left: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
         
         &:hover {
-            color: $secondary-color;
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        &.active {
+            background-color: $secondary-color;
+            color: white;
         }
     }
 }
 
-.page-content {
-    h1, h2 {
-        color: $primary-color;
-    }
+.policy-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin: 2rem 0;
     
     h1 {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
+        color: $primary-color;
+        margin-bottom: 2rem;
     }
     
     h2 {
-        font-size: 1.5rem;
+        color: $primary-color;
         margin: 2rem 0 1rem;
+    }
+    
+    ul {
+        padding-left: 2rem;
     }
 }
 
 .site-footer {
-    margin-top: 3rem;
+    background: $light-gray;
     padding: 2rem 0;
-    background-color: $light-gray;
-    text-align: center;
+    margin-top: 3rem;
+    
+    .footer-content {
+        text-align: center;
+    }
     
     a {
         color: $primary-color;
+        text-decoration: none;
+        
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 
-@media screen and (max-width: 600px) {
-    .site-nav {
-        float: none;
-        margin-top: 1rem;
+@media (max-width: 600px) {
+    .header-content {
+        flex-direction: column;
         text-align: center;
+        gap: 1rem;
+    }
+    
+    .nav-links {
+        justify-content: center;
     }
 }
