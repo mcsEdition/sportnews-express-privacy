@@ -1,14 +1,28 @@
-# index.md
 ---
 layout: default
-title: Home
+title: SportNews Express Privacy Policy
+lang: en
 ---
 
-# Welcome to SportNews Express Privacy Policy
+# Welcome to SportNews Express Legal Center
 
-Please select your language:
+SportNews Express is committed to protecting your privacy and ensuring transparency in how we handle your personal information. Our privacy policy is available in both English and French to better serve our international user base.
 
-- [English Version](privacy-policy-en)
-- [Version Française](privacy-policy-fr)
+## Choose Your Language
 
-This privacy policy was last updated on January 21, 2025.
+Please select your preferred language to view our comprehensive privacy policy:
+
+- [English Version](privacy-policy-en) - Privacy Policy and Terms of Service
+- [Version Française](privacy-policy-fr) - Politique de Confidentialité et Conditions d'Utilisation
+
+## Recent Updates
+
+This privacy policy was last updated on January 21, 2025. We encourage users to review our policy regularly as it may be updated to reflect changes in our practices or for legal compliance purposes.
+
+## Questions or Concerns?
+
+If you have any questions about our privacy policy or data practices, please don't hesitate to contact our privacy team at [privacy@sportnews-express.com](mailto:privacy@sportnews-express.com).
+
+---
+
+*SportNews Express - Your Trusted Source for Real-Time Sports News*
