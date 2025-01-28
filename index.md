@@ -21,7 +21,7 @@ This privacy policy was last updated on January 21, 2025. We encourage users to 
 
 ## Questions or Concerns?
 
-If you have any questions about our privacy policy or data practices, please don't hesitate to contact our privacy team at [privacy@sportnews-express.com](mailto:privacy@sportnews-express.com).
+If you have any questions about our privacy policy or data practices, please don't hesitate to contact our privacy team at [noreplyhorizonai@gmail.com](mailto:noreplyhorizonai@gmail.com).
 
 ---
 
