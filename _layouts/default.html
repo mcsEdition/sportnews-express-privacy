@@ -7,9 +7,8 @@
     
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
     
-    
     <!-- CSS -->
-   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     
     <!-- Open Graph tags -->
     <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
@@ -29,21 +28,30 @@
           
           <nav class="site-nav">
             <div class="nav-links">
-              {% if page.url contains 'fr' %}
-                <a href="{{ '/privacy-policy-en' | relative_url }}" class="nav-link">English</a>
-                <span class="nav-separator">|</span>
-                <a href="{{ '/privacy-policy-fr' | relative_url }}" class="nav-link active">Français</a>
+              <a href="{{ '/' | relative_url }}" class="nav-link">Home</a>
+              
+              <!-- Ajout des liens de contact en français et anglais -->
+              {% if page.lang == 'fr' %}
+                <a href="{{ '/contact-fr' | relative_url }}" class="nav-link">Contact</a>
               {% else %}
-                <a href="{{ '/privacy-policy-en' | relative_url }}" class="nav-link active">English</a>
+                <a href="{{ '/contact' | relative_url }}" class="nav-link">Contact</a>
+              {% endif %}
+              
+              <!-- Liens de langue -->
+              {% if page.url contains 'fr' %}
+                <a href="{% if page.url contains 'contact' %}{{ '/contact' | relative_url }}{% elsif page.url contains 'privacy' %}{{ '/privacy-policy-en' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}" class="nav-link">English</a>
                 <span class="nav-separator">|</span>
-                <a href="{{ '/privacy-policy-fr' | relative_url }}" class="nav-link">Français</a>
+                <a href="{% if page.url contains 'contact' %}{{ '/contact-fr' | relative_url }}{% elsif page.url contains 'privacy' %}{{ '/privacy-policy-fr' | relative_url }}{% else %}{{ '/fr' | relative_url }}{% endif %}" class="nav-link active">Français</a>
+              {% else %}
+                <a href="{% if page.url contains 'contact' %}{{ '/contact' | relative_url }}{% elsif page.url contains 'privacy' %}{{ '/privacy-policy-en' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}" class="nav-link active">English</a>
+                <span class="nav-separator">|</span>
+                <a href="{% if page.url contains 'contact' %}{{ '/contact-fr' | relative_url }}{% elsif page.url contains 'privacy' %}{{ '/privacy-policy-fr' | relative_url }}{% else %}{{ '/fr' | relative_url }}{% endif %}" class="nav-link">Français</a>
               {% endif %}
             </div>
           </nav>
         </div>
       </div>
     </header>
-
     <main class="page-content">
       <div class="wrapper">
         <article class="policy-content">
@@ -51,25 +59,35 @@
         </article>
       </div>
     </main>
-
     <footer class="site-footer">
       <div class="wrapper">
         <div class="footer-content">
           <div class="footer-info">
             <p class="copyright">&copy; {{ 'now' | date: "%Y" }} SportNews Express. All rights reserved.</p>
-            <p class="contact">Contact: <a href="mailto:privacy@sportnews-express.com">privacy@sportnews-express.com</a></p>
+            <!-- Mise à jour de l'adresse email pour correspondre à celle dans la page de contact -->
+            <p class="contact">Contact: <a href="mailto:mcsedition@gmail.com">mcsedition@gmail.com</a></p>
+            <!-- Ajout d'un numéro de téléphone -->
+            <p class="contact">Phone: +1 555-123-4567</p>
+            <!-- Ajout d'un lien vers la page de contact -->
+            <p class="contact">
+              {% if page.lang == 'fr' %}
+                <a href="{{ '/contact-fr' | relative_url }}">Contactez-nous</a>
+              {% else %}
+                <a href="{{ '/contact' | relative_url }}">Contact Us</a>
+              {% endif %}
+            </p>
           </div>
           
           <div class="app-links">
             <p class="app-download">
               Download SportNews Express:
-              <a href="#" class="store-link">Google Play Store</a>
+              <!-- Remplacez "#" par le lien réel vers votre application sur Google Play -->
+              <a href="https://play.google.com/store/apps/details?id=com.mcsedition.flutter_projects" class="store-link">Google Play Store</a>
             </p>
           </div>
         </div>
       </div>
     </footer>
-
     <!-- Optional: Add Google Analytics or other tracking code here -->
     {% if site.google_analytics %}
       <script>
@@ -77,7 +95,6 @@
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
         ga('create', '{{ site.google_analytics }}', 'auto');
         ga('send', 'pageview');
       </script>
