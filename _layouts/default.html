@@ -88,55 +88,6 @@
         </article>
       </div>
     </main>
-    <footer class="site-footer">
-      <div class="wrapper">
-        <div class="footer-content">
-          <div class="footer-info">
-            <p class="copyright">&copy; {{ 'now' | date: "%Y" }} SportNews Express. All rights reserved.</p>
-            <p class="contact">Email: <a href="mailto:mcsedition@gmail.com">mcsedition@gmail.com</a></p>
-            <p class="contact">Phone: +1 555-123-4567</p>
-          </div>
-          
-          <div class="footer-links">
-            <ul>
-              <li><a href="{{ '/' | relative_url }}">{% if page.lang == 'fr' %}Accueil{% else %}Home{% endif %}</a></li>
-              <li>
-                {% if page.lang == 'fr' %}
-                  <a href="{{ '/contact-fr' | relative_url }}">Contact</a>
-                {% else %}
-                  <a href="{{ '/contact' | relative_url }}">Contact</a>
-                {% endif %}
-              </li>
-              <li>
-                {% if page.lang == 'fr' %}
-                  <a href="{{ '/terms-fr' | relative_url }}">Conditions d'utilisation</a>
-                {% else %}
-                  <a href="{{ '/terms' | relative_url }}">Terms of Use</a>
-                {% endif %}
-              </li>
-              <li>
-                {% if page.lang == 'fr' %}
-                  <a href="{{ '/privacy-policy-fr' | relative_url }}">Politique de confidentialité</a>
-                {% else %}
-                  <a href="{{ '/privacy-policy-en' | relative_url }}">Privacy Policy</a>
-                {% endif %}
-              </li>
-            </ul>
-          </div>
-          
-          <div class="app-links">
-            <p class="app-download">
-              {% if page.lang == 'fr' %}
-                Téléchargez SportNews Express:
-              {% else %}
-                Download SportNews Express:
-              {% endif %}
-              <a href="https://play.google.com/store/apps/details?id=com.mcsedition.flutter_projects" class="store-link">Google Play Store</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
     {% if site.google_analytics %}
       <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
