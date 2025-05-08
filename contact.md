@@ -11,7 +11,7 @@ We'd love to hear from you! If you have any questions, feedback, or need assista
 ## Contact Information
 
 **Email**: mcsedition@gmail.com  
-**Website**: [https://mcsedition.github.io/sportnews-express/](https://mcsedition.github.io/sportnews-express/)
+**Website**: [https://mcsedition.github.io/sportnews-express/](https://mcsedition.github.io/sportnews-express-privacy/)
 
 ## Send Us a Message
 
@@ -23,4 +23,3 @@ For information about how we collect and use your data, please refer to our:
 
 - [Privacy Policy (English)](privacy-policy-en.html)
 - [Privacy Policy (French)](privacy-policy-fr.html)
-- [Terms of Use](terms.html)
