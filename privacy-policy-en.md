@@ -6,7 +6,7 @@ lang: en
 
 # Privacy Policy - SportNews Express
 
-*Last updated: January 21, 2025*
+*Last updated: May 05, 2025*
 
 ## Introduction
 
@@ -92,9 +92,9 @@ We reserve the right to modify this policy. Changes will be notified:
 ## 9. Contact
 
 For any questions regarding your personal data:
-- Email: privacy@sportnews-express.com
+- Email: mcsedition@gmail.com
 - Contact form in the application
-- Postal address: [Company Address]
+
 
 ## 10. Consent
 
