@@ -3,20 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Privacy Policy for SportNews Express - Your real-time sports news application">
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}SportNews Express - Your real-time sports news application{% endif %}">
     
-    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title | default: 'SportNews Express' }}</title>
     
     <!-- CSS -->
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     
     <!-- Open Graph tags -->
-    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-    <meta property="og:description" content="{{ site.description }}">
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title | default: 'SportNews Express' }}{% endif %}">
+    <meta property="og:description" content="{{ site.description | default: 'SportNews Express - Your real-time sports news application' }}">
     <meta property="og:url" content="{{ page.url | absolute_url }}">
     
     <!-- SEO -->
-    {% seo %}
+    {% if jekyll.environment == 'production' and site.seo %}
+      {% seo %}
+    {% endif %}
   </head>
   <body>
     <header class="site-header">
@@ -28,24 +30,51 @@
           
           <nav class="site-nav">
             <div class="nav-links">
-              <a href="{{ '/' | relative_url }}" class="nav-link">Home</a>
+              <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% endif %}">{% if page.lang == 'fr' %}Accueil{% else %}Home{% endif %}</a>
               
-              <!-- Ajout des liens de contact en français et anglais -->
+              <!-- Liens vers les pages de contact -->
               {% if page.lang == 'fr' %}
-                <a href="{{ '/contact-fr' | relative_url }}" class="nav-link">Contact</a>
+                <a href="{{ '/contact-fr' | relative_url }}" class="nav-link {% if page.url contains 'contact-fr' %}active{% endif %}">Contact</a>
               {% else %}
-                <a href="{{ '/contact' | relative_url }}" class="nav-link">Contact</a>
+                <a href="{{ '/contact' | relative_url }}" class="nav-link {% if page.url contains 'contact' and page.url != '/contact-fr' %}active{% endif %}">Contact</a>
               {% endif %}
               
-              <!-- Liens de langue -->
-              {% if page.url contains 'fr' %}
-                <a href="{% if page.url contains 'contact' %}{{ '/contact' | relative_url }}{% elsif page.url contains 'privacy' %}{{ '/privacy-policy-en' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}" class="nav-link">English</a>
-                <span class="nav-separator">|</span>
-                <a href="{% if page.url contains 'contact' %}{{ '/contact-fr' | relative_url }}{% elsif page.url contains 'privacy' %}{{ '/privacy-policy-fr' | relative_url }}{% else %}{{ '/fr' | relative_url }}{% endif %}" class="nav-link active">Français</a>
+              
+              <!-- Liens vers les politiques de confidentialité -->
+              {% if page.lang == 'fr' %}
+                <a href="{{ '/privacy-policy-fr' | relative_url }}" class="nav-link {% if page.url contains 'privacy-policy-fr' %}active{% endif %}">Confidentialité</a>
               {% else %}
-                <a href="{% if page.url contains 'contact' %}{{ '/contact' | relative_url }}{% elsif page.url contains 'privacy' %}{{ '/privacy-policy-en' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}" class="nav-link active">English</a>
-                <span class="nav-separator">|</span>
-                <a href="{% if page.url contains 'contact' %}{{ '/contact-fr' | relative_url }}{% elsif page.url contains 'privacy' %}{{ '/privacy-policy-fr' | relative_url }}{% else %}{{ '/fr' | relative_url }}{% endif %}" class="nav-link">Français</a>
+                <a href="{{ '/privacy-policy-en' | relative_url }}" class="nav-link {% if page.url contains 'privacy-policy-en' %}active{% endif %}">Privacy</a>
+              {% endif %}
+              
+              <!-- Sélecteur de langue -->
+              <span class="nav-separator">|</span>
+              
+              {% assign page_name_parts = page.url | split: "/" %}
+              {% assign page_name = page_name_parts | last | split: "." | first %}
+              
+              {% if page.lang == 'fr' %}
+                {% if page.url contains 'privacy-policy' %}
+                  <a href="{{ '/privacy-policy-en' | relative_url }}" class="nav-link">English</a>
+                {% elsif page.url contains 'terms' %}
+                  <a href="{{ '/terms' | relative_url }}" class="nav-link">English</a>
+                {% elsif page.url contains 'contact' %}
+                  <a href="{{ '/contact' | relative_url }}" class="nav-link">English</a>
+                {% else %}
+                  <a href="{{ '/' | relative_url }}" class="nav-link">English</a>
+                {% endif %}
+                <span class="nav-link active">Français</span>
+              {% else %}
+                <span class="nav-link active">English</span>
+                {% if page.url contains 'privacy-policy' %}
+                  <a href="{{ '/privacy-policy-fr' | relative_url }}" class="nav-link">Français</a>
+                {% elsif page.url contains 'terms' %}
+                  <a href="{{ '/terms-fr' | relative_url }}" class="nav-link">Français</a>
+                {% elsif page.url contains 'contact' %}
+                  <a href="{{ '/contact-fr' | relative_url }}" class="nav-link">Français</a>
+                {% else %}
+                  <a href="{{ '/fr' | relative_url }}" class="nav-link">Français</a>
+                {% endif %}
               {% endif %}
             </div>
           </nav>
@@ -64,31 +93,50 @@
         <div class="footer-content">
           <div class="footer-info">
             <p class="copyright">&copy; {{ 'now' | date: "%Y" }} SportNews Express. All rights reserved.</p>
-            <!-- Mise à jour de l'adresse email pour correspondre à celle dans la page de contact -->
-            <p class="contact">Contact: <a href="mailto:mcsedition@gmail.com">mcsedition@gmail.com</a></p>
-            <!-- Ajout d'un numéro de téléphone -->
+            <p class="contact">Email: <a href="mailto:mcsedition@gmail.com">mcsedition@gmail.com</a></p>
             <p class="contact">Phone: +1 555-123-4567</p>
-            <!-- Ajout d'un lien vers la page de contact -->
-            <p class="contact">
-              {% if page.lang == 'fr' %}
-                <a href="{{ '/contact-fr' | relative_url }}">Contactez-nous</a>
-              {% else %}
-                <a href="{{ '/contact' | relative_url }}">Contact Us</a>
-              {% endif %}
-            </p>
+          </div>
+          
+          <div class="footer-links">
+            <ul>
+              <li><a href="{{ '/' | relative_url }}">{% if page.lang == 'fr' %}Accueil{% else %}Home{% endif %}</a></li>
+              <li>
+                {% if page.lang == 'fr' %}
+                  <a href="{{ '/contact-fr' | relative_url }}">Contact</a>
+                {% else %}
+                  <a href="{{ '/contact' | relative_url }}">Contact</a>
+                {% endif %}
+              </li>
+              <li>
+                {% if page.lang == 'fr' %}
+                  <a href="{{ '/terms-fr' | relative_url }}">Conditions d'utilisation</a>
+                {% else %}
+                  <a href="{{ '/terms' | relative_url }}">Terms of Use</a>
+                {% endif %}
+              </li>
+              <li>
+                {% if page.lang == 'fr' %}
+                  <a href="{{ '/privacy-policy-fr' | relative_url }}">Politique de confidentialité</a>
+                {% else %}
+                  <a href="{{ '/privacy-policy-en' | relative_url }}">Privacy Policy</a>
+                {% endif %}
+              </li>
+            </ul>
           </div>
           
           <div class="app-links">
             <p class="app-download">
-              Download SportNews Express:
-              <!-- Remplacez "#" par le lien réel vers votre application sur Google Play -->
+              {% if page.lang == 'fr' %}
+                Téléchargez SportNews Express:
+              {% else %}
+                Download SportNews Express:
+              {% endif %}
               <a href="https://play.google.com/store/apps/details?id=com.mcsedition.flutter_projects" class="store-link">Google Play Store</a>
             </p>
           </div>
         </div>
       </div>
     </footer>
-    <!-- Optional: Add Google Analytics or other tracking code here -->
     {% if site.google_analytics %}
       <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
