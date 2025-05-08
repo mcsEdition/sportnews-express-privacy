@@ -6,7 +6,7 @@ lang: fr
 
 # Politique de Confidentialité - SportNews Express
 
-*Dernière mise à jour : 21 janvier 2025*
+*Dernière mise à jour : 08 May 2025*
 
 ## Introduction
 
@@ -92,9 +92,9 @@ Nous nous réservons le droit de modifier cette politique. Les changements seron
 ## 9. Contact
 
 Pour toute question concernant vos données personnelles :
-- Email : privacy@sportnews-express.com
+- Email : mcsedition@gmail.com
 - Formulaire de contact dans l'application
-- Adresse postale : [Adresse de l'entreprise]
+
 
 ## 10. Consentement
 
