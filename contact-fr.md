@@ -11,7 +11,7 @@ Nous sommes à votre écoute ! Si vous avez des questions, des commentaires ou b
 ## Coordonnées
 
 **Email** : mcsedition@gmail.com  
-**Site web** : [https://mcsedition.github.io/sportnews-express/](https://mcsedition.github.io/sportnews-express/)
+**Site web** : [https://mcsedition.github.io/sportnews-express/](https://mcsedition.github.io/sportnews-express-privacy/)
 
 ## Envoyez-nous un message
 
@@ -23,4 +23,3 @@ Pour plus d'informations sur la façon dont nous collectons et utilisons vos don
 
 - [Politique de confidentialité (Anglais)](privacy-policy-en.html)
 - [Politique de confidentialité (Français)](privacy-policy-fr.html)
-- [Conditions d'utilisation](terms.html)
