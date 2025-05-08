@@ -1,20 +1,12 @@
 # Configuration du site
 title: SportNews Express - Privacy Policy
-email: privacy@sportnews-express.com
+email: mcsedition@gmail.com
 description: >-
   Privacy Policy and Terms of Service for SportNews Express, 
   your real-time sports news application available on Google Play Store.
 baseurl: "/sportnews-express-privacy"
 url: "https://mcsedition.github.io"
 
-
-# Configuration des réseaux sociaux
-social:
-  name: SportNews Express
-  links:
-    - https://play.google.com/store/apps/details?id=com.sportnews.express
-    - https://twitter.com/sportnewsexpress
-    - https://facebook.com/sportnewsexpress
 
 # Configuration des langues
 languages: ["en", "fr"]
